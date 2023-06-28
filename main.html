@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+        document.querySelector("#logoutBtn").onclick = function(){
+        alert("Do you want to log out ?");
+        };
+        document.querySelector("ul").style.display = "none";
+        document.querySelector("button").onclick = function(){
+        let movie_name = document.querySelector("#movie_name").value;
+        fetch(`http://www.omdbapi.com/?apikey=12e8239d&t=${movie_name}`).
+        then(response => response.json()).then
+        (data => {
+        if(!data.Response){
+        console.log("Invalid");
+        };
+        document.querySelector("img").src = data.Poster;
+        document.querySelector("#name").innerHTML = `Title: ${data.Title}`;
+        document.querySelector("#actors").innerHTML = `Actors: ${data.Actors}`;
+        document.querySelector("#director").innerHTML = `Director: ${data.Director}`;
+        document.querySelector("#genre").innerHTML = `Genre: ${data.Genre}`;
+        document.querySelector("#plot").innerHTML = `Plot: ${data.Plot}`;
+        document.querySelector("#rating").innerHTML = `IMDb Rating: ${data.imdbRating}`;
+        });
+        document.querySelector("ul").style.display = "block";
+        };
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css"">
+</head>
+
+<body>
+    <h1 style="font-size:400%">IMDb</h1>
+    <input id="movie_name" type="text" placeholder="Enter Movie Name">
+    <button>Submit</button>
+    <br><br>
+    <img>
+    <ul>
+        <li id="name"></li>
+        <li id="rating"></li>
+        <li id="actors"></li>
+        <li id="director"></li>
+        <li id="genre"></li>
+        <li id="plot"></li>
+
+    </ul>
+    <a href="/">
+<button id="logoutBtn" style="position: absolute; top: 10px; right: 10px; font-size: 12px; padding: 5px 10px;">Log Out</button>
+    </a>
+
+</body>
+
+</html>
+

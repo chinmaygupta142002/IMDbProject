@@ -1,0 +1,64 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #659DBD;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    padding: 15px; /* Increased padding */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 22px; /* Increased font size */
+    font-family: 'Montserrat', sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+
+button {
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #B55C8D;
+    color: #97CAEF;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #864268;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    animation: fadeInAnimation 1s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
